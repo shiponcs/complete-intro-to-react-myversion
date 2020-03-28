@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import pet, { ANIMALS } from "@frontendmasters/pet";
-import useDrpodown from "./useDropdown";
+import useDropdown from "./useDropdown";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("Seattle, WA"); // [currentState,stateUpdater]
   const [breeds, setBreeds] = useState([]);
-  const [animal, AnimalDropdown] = useDrpodown("Animal", "dog", ANIMALS);
+  const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS);
   const [breed, BreedDropDown, setBreed] = useDropdown("Breed", "", breeds);
   console.log("h");
   useEffect(() => {
