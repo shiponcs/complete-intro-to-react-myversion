@@ -1,6 +1,7 @@
 // mostly from reactjs.org/docs/error-boundaries.html
 import React from "react";
 import { Link, Redirect } from "@reach/router";
+import * as Sentry from "@sentry/browser";
 
 class ErrorBoundary extends React.Component {
   state = { hasError: false, redirect: false };
@@ -10,7 +11,13 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, info) {
-    console.error("Error Boundary caught an error", error, info);
+    // console.error("Error Boundary caught an error", error, info);
+
+    Sentry.withScope((scope) => {
+      scope.setExtras(info);
+      const eventId = Sentry.captureException(error);
+      this.setState({ eventId });
+    });
   }
   componentDidUpdate() {
     if (this.state.hasError) {
