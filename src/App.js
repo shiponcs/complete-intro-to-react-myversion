@@ -5,7 +5,7 @@ import SearchParams from "./searchParams";
 import Details from "./Details";
 import * as Sentry from "@sentry/browser";
 Sentry.init({
-  dsn: "https://77c663e095f44f399c705870aff9456d@sentry.io/5179945",
+  dsn: "https://77c663e095f44f399c705870aff9456d@sentry.io/5179945", // this is not url, rather DNS
 });
 const App = () => {
   return (
