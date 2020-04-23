@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 const Modal = ({ children }) => {
   const elRef = useRef(null);
-  if (!elRef.crrent) {
+  if (!elRef.current) {
     const div = document.createElement("div");
     div.style.backgroundColor = "blue";
     elRef.current = div;

@@ -10,7 +10,6 @@ class Details extends React.Component {
   state = { loading: true, showModal: false };
 
   componentDidMount() {
-    // throw new Error("lol");
     pet
       .animal(+this.props.id)
       .then(({ animal }) => {
@@ -79,8 +78,6 @@ class Details extends React.Component {
     );
   }
 }
-
-// export default Details;
 
 export default function DetailsWithErrorBoundary(props) {
   return (
