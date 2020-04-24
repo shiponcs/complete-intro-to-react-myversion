@@ -1,20 +1,47 @@
 {
   "extends": [
-    "eslint:recommended",
+    "prettier/@typescript-eslint",
     "plugin:import/errors",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "rules": {
     "react/prop-types": 0,
     "no-console": 0,
     "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1
+    "react-hooks/exhaustive-deps": 1,
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/explicit-function-return-type": [
+      0,
+      {
+        "allowExpressions": false,
+        "allowTypedFunctionExpressions": false
+      }
+    ],
+    "@typescript-eslint/interface-name-prefix": [
+      1,
+      {
+        "prefixWithI": "always"
+      }
+    ],
+    "import/no-unresolved": 1
   },
-  "plugins": ["react", "import", "jsx-a11y", "react-hooks"],
-  "parser": "babel-eslint",
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "import",
+    "jsx-a11y",
+    "react-hooks"
+  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -31,5 +58,10 @@
     "react": {
       "version": "detect"
     }
+    // "import/resolver": {
+    //   "node": {
+    //     "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    //   }
+    // }
   }
 }
