@@ -9,6 +9,7 @@
     "dev:mock": "cross-env PET_MOCK=mock npm run dev",
     "format": "prettier \"src/**/*.{js,html}\" --write",
     "lint": "eslint \"src/**/*.{js, jsx, tsx}\" --quiet",
+    "typecheck": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

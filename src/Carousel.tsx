@@ -10,7 +10,7 @@ interface IProps {
 //   photos: string[];
 // }
 
-class Carousel extends React.Component {
+class Carousel extends React.Component<IProps> {
   public state = {
     photos: [],
     active: 0,
